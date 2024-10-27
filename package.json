@@ -4,7 +4,8 @@
   "description": "Budget application by a person for the people. ",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Hello World\""
+    "test": "echo \"Hello World\"",
+    "start": "electron ."
   },
   "author": "Joel Rechin",
   "license": "ISC",
