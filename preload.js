@@ -1,5 +1,8 @@
 // preload.js
 
+
+
+
 // All the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,3 +15,4 @@ window.addEventListener('DOMContentLoaded', () => {
       replaceText(`${dependency}-version`, process.versions[dependency])
     }
   })
+

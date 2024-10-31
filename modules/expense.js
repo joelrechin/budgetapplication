@@ -1,5 +1,8 @@
-class Expense {
+const { v4: uuid }  = require('uuid');
 
+export class Expense {
+
+    id;
     name;
     description = '';
     budgetCategory;
@@ -13,6 +16,7 @@ class Expense {
     expenseType;
 
     constructor(name, budgetCategory, amount, frequency='monthly'){
+        this.id = uuid();
         this.name = name;
         this.budgetCategory = budgetCategory;
         this.amount = amount;
@@ -30,8 +34,4 @@ class Expense {
             this.#annualAmount = amount;
         }
     }
-    
-
-
-
 }
