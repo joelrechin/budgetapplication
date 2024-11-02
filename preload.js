@@ -1,7 +1,9 @@
 // preload.js
+const { contextBridge } = require("electron");
+const expensesDB = require("./modules/db/expensemgr");
 
-
-
+contextBridge.exposeInMainWorld("sqlite", {expensesDB, });
+contextBridge.exposeInMainWorld("require", require);
 
 // All the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.

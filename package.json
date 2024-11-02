@@ -7,6 +7,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "better-sqlite3": "^11.5.0",
     "boolean": "^3.2.0",
     "buffer-crc32": "^0.2.13",
     "cacheable-lookup": "^5.0.4",
@@ -74,7 +75,24 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "start": "electron .",
+    "package-windows": "rm -rf build && rm -rf dist && npm run build && electron-builder -w -c.extraMetadata.main=build/electron.js"
+  },
+  "build": {
+    "appId": "sqlite.electron-test.app",
+    "productName": "SQLite Electron",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*",
+            "public/**/*"
+        ],
+        "directories": {
+            "buildResources": "public"
+        },
+        "extraResources": [
+            "./expenses.db"
+        ]
   },
   "author": "",
   "license": "ISC"

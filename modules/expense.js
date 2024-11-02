@@ -1,5 +1,7 @@
 const { v4: uuid }  = require('uuid');
 
+const emgr = window.sqlite.expensesDB;
+
 export class Expense {
 
     id;
@@ -7,8 +9,8 @@ export class Expense {
     description = '';
     budgetCategory;
     amount;
-    #monthlyAmount;
-    #annualAmount;
+    monthlyAmount;
+    annualAmount;
     frequency;
     periodStart;
     periodEnd;
@@ -25,13 +27,18 @@ export class Expense {
     }
 
     _calcAmounts(amount){
-        if(this.frequency = "monthly"){
-            this.#monthlyAmount = amount
-            this.#annualAmount = amount*12;
+        if(this.frequency === "monthly"){
+            this.monthlyAmount = amount
+            this.annualAmount = amount*12;
         }
-        if(this.frequency = "annually"){
-            this.#monthlyAmount = amount/12;
-            this.#annualAmount = amount;
+        if(this.frequency === "annually"){
+            this.monthlyAmount = amount/12;
+            this.annualAmount = amount;
         }
+    }
+
+    getExpense(){
+        const data = emgr.getExpense(this.id)[0];
+        return data;
     }
 }
