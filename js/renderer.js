@@ -1,13 +1,15 @@
 import { Expense } from "../modules/expense.js";
 
+const value = document.getElementById('button'); 
+value.innerHTML = "Add Expense";
 
 
-const emgr = window.sqlite.expensesDB;
+// const emgr = window.sqlite.expensesDB;
 
-const expense = new Expense("Cell", "Insurance", 150.00);
+// const expense = new Expense("Cell", "Insurance", 150.00);
 
-emgr.addExpense(expense);
-console.log(expense.getExpense())
+// emgr.addExpense(expense);
+// console.log(expense.getExpense())
 //console.log(expense.getExpense())
 
 
