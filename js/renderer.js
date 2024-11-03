@@ -1,7 +1,7 @@
 import { Expense } from "../modules/expense.js";
 
 const value = document.getElementById('button'); 
-value.innerHTML = "Add Expense";
+value.innerHTML = "Test";
 
 
 // const emgr = window.sqlite.expensesDB;
