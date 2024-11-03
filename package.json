@@ -71,6 +71,7 @@
     "universalify": "^0.1.2",
     "uuid": "^11.0.2",
     "wrappy": "^1.0.2",
+    "xel": "^0.28.15",
     "yauzl": "^2.10.0"
   },
   "scripts": {
@@ -82,17 +83,17 @@
   "build": {
     "appId": "sqlite.electron-test.app",
     "productName": "SQLite Electron",
-        "files": [
-            "build/**/*",
-            "node_modules/**/*",
-            "public/**/*"
-        ],
-        "directories": {
-            "buildResources": "public"
-        },
-        "extraResources": [
-            "./expenses.db"
-        ]
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "public/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "extraResources": [
+      "./expenses.db"
+    ]
   },
   "author": "",
   "license": "ISC"
