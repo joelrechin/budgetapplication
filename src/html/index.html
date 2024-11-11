@@ -2,29 +2,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="xel-theme" content="../node_modules/xel/themes/cupertino.css">
+    <meta charset="UTF-8" />
+    <!-- <meta name="xel-theme" content="../../node_modules/xel/themes/cupertino.css">
     <meta name="xel-accent-color" content="blue">
-    <meta name="xel-icons" content="../node_modules/xel/icons/material.svg">
-    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline'">
-    <link href="../css/output.css" rel="stylesheet">
+    <meta name="xel-icons" content="../../node_modules/xel/icons/material.svg"> -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="style-src 'self' 'unsafe-inline'"
+    />
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="../js/renderer.js" type="module"></script>
+    <!-- <script src="../../node_modules/xel/xel.js" type="module"></script> -->
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    
+
     <title>Hello World!</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold">Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version">
-    </span>.
-
-    <x-button>
-      <x-label id="button">Test</x-label>
-    </x-button>
-
-    <!-- You can also require other files to run in this process -->
-    <script src="../js/renderer.js" type="module"></script>
-    <script src="../node_modules/xel/xel.js" type="module"></script>
+  <body class="overflow-x-hidden overflow-y-hidden">
+    <div id="main-container" class="flex flex-col min-h-screen min-w-24">
+      <div id="top" class="flex grow text-sm max-h-[calc(100vh-25px)]">
+        <div
+          id="outer-left-sidebar" class="flex flex-col min-w-24 max-w-24 text-xs border-r-1 bg-gray-100 shadow-lg border-black p-1">
+          <div class="text-left font-bold pb-10">Budget Application </div>
+          <div id="ol-sidebar-overview" class="h-12 text-center hover:bg-slate-200">
+            <button id="overview-button" class="h-12">Overview</button>
+          </div>
+          <div class="h-12 text-center hover:bg-slate-200">
+            <button id="income-button" class="h-12">Income</button>
+          </div>
+          <div id="ol-sidebar-expenses" class="h-12 text-center hover:bg-slate-200">
+            <button id="expenses-button" class="h-12 ">Expenses</button>
+          </div>
+          <div class="h-12 text-center hover:bg-slate-200">
+            <button id="investments-button" class="h-12">Investments</button>
+          </div>
+          <div class="h-12 text-center hover:bg-slate-200">
+            <button id="settings-button" class="h-12">Settings</button>
+          </div>
+        </div>
+        <aside id="inner-left-sidebar" class="min-w-[200px] border-r-1 shrink-0 shadow-lg p-1">Other Options Here</aside>
+        <div id="content" class="grow p-5 min-h-0 overflow-hidden overflow-y-scroll">
+        </div>
+      </div>
+      <div id="bottom-bar" class="flex bg-slate-600 h-[25px]">This is the bottom bar.</div>
+    </div>
   </body>
 </html>

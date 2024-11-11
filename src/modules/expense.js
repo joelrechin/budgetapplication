@@ -2,9 +2,24 @@ const { v4: uuid }  = require('uuid');
 
 const emgr = window.sqlite.expensesDB;
 
+export const expenseCategories = [
+    "Housing",
+    "Transportation",
+    "Food",
+    "Utilities",
+    "Insurance",
+    "Medical",
+    "Savings",
+    "Debt",
+    "Personal",
+    "Recreation",
+    "Miscellaneous"
+];
+
 export class Expense {
 
     id;
+    budgetId;
     name;
     description = '';
     budgetCategory;
@@ -16,6 +31,7 @@ export class Expense {
     periodEnd;
     taxType;
     expenseType;
+    expenseDisplay;
 
     constructor(name, budgetCategory, amount, frequency='monthly'){
         this.id = uuid();
@@ -35,6 +51,10 @@ export class Expense {
             this.monthlyAmount = amount/12;
             this.annualAmount = amount;
         }
+    }
+
+    _expenseDisplay(){
+        this.expenseDisplay = `${this.name} - ${this.amount} - ${this.frequency}`;
     }
 
     getExpense(){

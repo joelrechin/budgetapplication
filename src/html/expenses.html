@@ -1,0 +1,108 @@
+<script src="../js/expenses.js" type="module"></script>
+
+<div id="expense-container" class="flex flex-col">
+    <div id="expense-form" class="max-h-5/6 pb-5">
+        <form id="expense-form" class="flex flex-col gap-2">
+            <label for="expense-name">Expense Name:</label>
+            <input required type="text" id="expense-name" name="name"  class="border border-black rounded-md">
+            <label for="expense-description">Expense Description:</label>
+            <input type="text" id="expense-description" name="description"  class="border border-black rounded-md">
+            <label for="expense-amount">Expense Amount:</label>
+            <input required type="number" min="0" step="0.01" id="amount" name="amount"  class="border border-black rounded-md">
+            <label for="expense-category">Expense Category:</label>
+            <label for="expense-category">Expense Category:</label>
+            <select required id="expense-category" name="budgetcategory" class="border border-black rounded-md">
+                <option value="" disabled selected>Select a category</option>
+            </select>
+            <label for="expense-ongoing">Ongoing:</label>
+            <input type="checkbox" id="expense-ongoing" name="expense-ongoing" class="border border-black rounded-md">
+            <label for="expense-date">Due Date:</label>
+            <input required type="date" id="expense-date" name="expense-date"  class="border border-black rounded-md">
+            <button type="submit" id="submit-expense"  class="border border-black rounded-md">Submit</button>
+            <button type="reset" id="reset-button" class="border border-black rounded-md">Reset</button>
+        </form>
+        <button id="test-button"  class="border border-black rounded-md">Test Button</button>
+    </div>
+    <div id="expense-list">
+        <table class="table-auto border-collapse border border-black w-full">
+            <thead>
+                <tr>
+                    <th class="border border-black px-4 py-2">Expense Name</th>
+                    <th class="border border-black px-4 py-2">Expense Amount</th>
+                    <th class="border border-black px-4 py-2">Expense Category</th>
+                    <th class="border border-black px-4 py-2">Expense Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat this block 40 times for 40 rows -->
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <tr>
+                    <td class="border border-black px-4 py-2">Sample Name</td>
+                    <td class="border border-black px-4 py-2">Sample Amount</td>
+                    <td class="border border-black px-4 py-2">Sample Category</td>
+                    <td class="border border-black px-4 py-2">Sample Date</td>
+                </tr>
+                <!-- End of repeated block -->
+            </tbody>
+        </table>
+    </div>
+</div>

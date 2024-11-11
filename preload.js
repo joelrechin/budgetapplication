@@ -1,6 +1,6 @@
 // preload.js
 const { contextBridge } = require("electron");
-const expensesDB = require("./modules/db/expensemgr");
+const expensesDB = require("./src/db/expensemgr");
 
 contextBridge.exposeInMainWorld("sqlite", {expensesDB, });
 contextBridge.exposeInMainWorld("require", require);

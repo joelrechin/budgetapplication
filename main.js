@@ -7,12 +7,14 @@ const path = require('node:path')
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1200,
     height: 600,
+    minHeight: 600,
+    minWidth: 1200,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preload.js'), 
       enableRemoteModule: true,
     }
   })
@@ -20,6 +22,10 @@ const createWindow = () => {
   mainWindow.loadFile('./src/html/index.html')
   mainWindow.webContents.openDevTools()
 }
+
+app.on('browser-window-created', (event, window) => {
+  window.setAlwaysOnTop(true);
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
