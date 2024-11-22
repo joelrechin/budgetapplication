@@ -1,24 +1,24 @@
-import { Expense, expenseCategories } from "../modules/expense.js";
+import { Expense } from "../modules/expense.js";
+
 const emgr = window.sqlite.expensesDB;
 
-//load expense categories in dropdown
-const categorySelect = document.getElementById("expense-category");
-expenseCategories.forEach(category => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    categorySelect.appendChild(option);
-});
+console.log("EXPENSES JS WORKING");
 
 
 fetch('expense-options.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('inner-left-sidebar').innerHTML = data;
+        document.getElementById("add-category-button").addEventListener("click", () => {
+
+            const newCategory = document.getElementById("new-category-input").value;
+            if (newCategory) {
+                const formattedCategory = newCategory.charAt(0).toUpperCase() + newCategory.slice(1).toLowerCase();
+                window.expenseAPI.saveCategory(formattedCategory);
+            }
+        });
     })
     .catch(error => console.error('Error loading expenses-options.html:', error));
-
-console.log("expenses.js loaded");
 
 document.getElementById("test-button").addEventListener("click", () => {
     console.log("test button clicked");

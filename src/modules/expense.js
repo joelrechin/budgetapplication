@@ -2,20 +2,6 @@ const { v4: uuid }  = require('uuid');
 
 const emgr = window.sqlite.expensesDB;
 
-export const expenseCategories = [
-    "Housing",
-    "Transportation",
-    "Food",
-    "Utilities",
-    "Insurance",
-    "Medical",
-    "Savings",
-    "Debt",
-    "Personal",
-    "Recreation",
-    "Miscellaneous"
-];
-
 export class Expense {
 
     id;
